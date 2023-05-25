@@ -1,0 +1,12 @@
+﻿<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+	<Application>
+		<Assembly Name="cswasi">
+			<Type Name="wit_the_world.Imports">
+				<Method Name="float32Param" />
+				<Method Name="float64Param" />
+				<Method Name="float32Result" />
+				<Method Name="float64Result" />
+			</Type>
+		</Assembly>
+	</Application>
+</Directives>

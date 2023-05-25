@@ -1,21 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-<PropertyGroup>
-  <PublishTrimmed>true</PublishTrimmed>
-</PropertyGroup>
+	<PropertyGroup>
+		<PublishTrimmed>true</PublishTrimmed>
+	</PropertyGroup>
 
-<ItemGroup>
-    <WasmImport Include="rust!wasmImportFloat32Param" />
-</ItemGroup>
+	<ItemGroup>
+		<WasmImport Include="rust!wasmImportFloat32Param" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.ILCompiler.LLVM; runtime.win-x64.Microsoft.DotNet.ILCompiler.LLVM" Version="8.0.0-*" />
-  </ItemGroup>
+	<ItemGroup>
+		<RdXmlFile Include="rd.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.DotNet.ILCompiler.LLVM; runtime.win-x64.Microsoft.DotNet.ILCompiler.LLVM" Version="8.0.0-*" />
+	</ItemGroup>
 </Project>
