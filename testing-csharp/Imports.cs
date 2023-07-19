@@ -9,7 +9,7 @@ using System.Collections;
 public static class Imports {
     
     public static void float32Param(float x) {
-        ImportsInterop.wasmImportFloat32Param(x);
+        ImportsInterop.float32Param(x);
         
     }
     public static void float64Param(double x) {

@@ -8,16 +8,16 @@ using System.Runtime.InteropServices;
 
 public static class ImportsInterop {
     
-    [DllImport("rust")]
-    internal static extern void wasmImportFloat32Param(float p0);
+    [DllImport("$root")]
+    internal static extern void float32Param(float p0);
     
-    [DllImport("rust")]
+    [DllImport("$root")]
     internal static extern void wasmImportFloat64Param(double p0);
     
-    [DllImport("rust")]
+    [DllImport("$root")]
     internal static extern float wasmImportFloat32Result();
     
-    [DllImport("rust")]
+    [DllImport("$root")]
     internal static extern double wasmImportFloat64Result();
     
 }

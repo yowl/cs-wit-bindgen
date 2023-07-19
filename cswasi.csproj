@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
@@ -12,11 +12,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<WasmImport Include="rust!wasmImportFloat32Param" />
+		<WasmImport Include="$root!name2" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<RdXmlFile Include="rd.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<NativeLibrary Include="C:\github\wit-bindgen-csharp\testing-csharp\the_world_component_type.o" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float32-param" />
+		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float64-param" />
+		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float32-result" />
+		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float64-result" />
 	</ItemGroup>
 
 	<ItemGroup>
