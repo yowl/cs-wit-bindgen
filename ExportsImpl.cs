@@ -5,7 +5,7 @@ internal class ExportsImpl : IExports
 {
     public void Float32Param(float p0)
     {
-        throw new NotImplementedException();
+        ImportsInterop.float32Param(p0);
     }
 
     public float Float32Result()

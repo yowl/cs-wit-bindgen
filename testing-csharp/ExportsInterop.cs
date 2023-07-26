@@ -13,7 +13,9 @@ public static class ExportsInterop {
     public static IExports Exports {get; set;}
 
     [UnmanagedCallersOnly(EntryPoint = "foo:foo/floats#float32-param")]
-    public static void wasmExportFloat32Param(float p0) {
+    public static void wasmExportFloat32Param(float p0)
+    {
+        Exports = new ExportsImpl();
         Exports.Float32Param(p0);
         
     }
@@ -28,12 +30,11 @@ public static class ExportsInterop {
         return Exports.Float32Result();
         
     }
+
     [UnmanagedCallersOnly(EntryPoint = "foo:foo/floats#float64-result")]
     internal static double wasmExportFloat64Result()
     {
         return Exports.Float64Result();
-        
     }
-    
 }
 

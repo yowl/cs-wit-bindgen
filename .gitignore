@@ -33,3 +33,6 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 /.packages/
+*~
+/msbuild.binlog
+/msbuild.binlog
