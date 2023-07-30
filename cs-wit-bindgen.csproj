@@ -10,9 +10,6 @@
 		<PublishTrimmed>true</PublishTrimmed>
 		<AssemblyName>cswasi</AssemblyName>
 	</PropertyGroup>
-	<ItemGroup>
-		<WasmImport Include="$root!name2" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<RdXmlFile Include="rd.xml" />
@@ -21,6 +18,10 @@
 	<ItemGroup>
 		<NativeLibrary Include="C:\github\wit-bindgen-csharp\testing-csharp\the_world_component_type.o" />
 		<NativeLibrary Include="init.o" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<WasmImport Include="foo:foo/floats!float32-param" />
 	</ItemGroup>
 
 	<ItemGroup>

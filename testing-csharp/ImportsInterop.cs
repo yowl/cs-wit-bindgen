@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 public static class ImportsInterop {
     
-    [DllImport("$root")]
+    [DllImport("*", EntryPoint = "float32-param")]
     internal static extern void float32Param(float p0);
     
     [DllImport("$root")]
