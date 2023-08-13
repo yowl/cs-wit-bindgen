@@ -10,6 +10,18 @@
 		<PublishTrimmed>true</PublishTrimmed>
 		<AssemblyName>cswasi</AssemblyName>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="testing-csharp\**" />
+	  <EmbeddedResource Remove="testing-csharp\**" />
+	  <None Remove="testing-csharp\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Include="..\wit-bindgen-csharp\target\codegen-tests\guest-csharp-floats\the_world\TheWorld.cs" Link="TheWorld.cs" />
+	  <Compile Include="..\wit-bindgen-csharp\target\codegen-tests\guest-csharp-floats\the_world\Wit.exports.foo.foo.Floats.cs" Link="Wit.exports.foo.foo.Floats.cs" />
+	  <Compile Include="..\wit-bindgen-csharp\target\codegen-tests\guest-csharp-floats\the_world\Wit.exports.foo.foo.FloatsImpl.cs" Link="Wit.exports.foo.foo.FloatsImpl.cs" />
+	  <Compile Include="..\wit-bindgen-csharp\target\codegen-tests\guest-csharp-floats\the_world\Wit.exports.foo.foo.FloatsInterop.cs" Link="Wit.exports.foo.foo.FloatsInterop.cs" />
+	  <Compile Include="..\wit-bindgen-csharp\target\codegen-tests\guest-csharp-floats\the_world\Wit.imports.foo.foo.FloatsInterop.cs" Link="Wit.imports.foo.foo.FloatsInterop.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<RdXmlFile Include="rd.xml" />
@@ -17,7 +29,6 @@
 
 	<ItemGroup>
 		<NativeLibrary Include="C:\github\wit-bindgen-csharp\testing-csharp\the_world_component_type.o" />
-		<NativeLibrary Include="init.o" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -25,9 +36,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<CustomLinkerArg Include="-Wl,--export,_initialize"/>
-		<CustomLinkerArg Include="-Wl,--no-entry"/>
-		<CustomLinkerArg Include="-mexec-model=reactor"/>
+		<CustomLinkerArg Include="-Wl,--export,_initialize" />
+		<CustomLinkerArg Include="-Wl,--no-entry" />
+		<CustomLinkerArg Include="-mexec-model=reactor" />
 
 		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float32-param" />
 		<CustomLinkerArg Include="-Wl,--export,foo:foo/floats#float64-param" />

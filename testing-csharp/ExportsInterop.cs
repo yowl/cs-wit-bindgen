@@ -4,10 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace wit_the_world;
 
-using System;
-using System.Runtime.CompilerServices;
-using System.Collections;
-
 public static class ExportsInterop {
 
     public static IExports Exports {get; set;}
@@ -15,8 +11,7 @@ public static class ExportsInterop {
     [UnmanagedCallersOnly(EntryPoint = "foo:foo/floats#float32-param")]
     public static void wasmExportFloat32Param(float p0)
     {
-        Exports = new ExportsImpl();
-        Exports.Float32Param(p0);
+        ExportsImpl.Float32Param(p0);
         
     }
     [UnmanagedCallersOnly(EntryPoint = "foo:foo/floats#float64-param")]

@@ -6,9 +6,12 @@ using System.Runtime.CompilerServices;
 using System.Collections;
 
 public interface IExports {
-    void Float32Param(float p0);
+    static abstract void Float32Param(float p0);
     void Float64Param(double p0);
     float Float32Result();
     double Float64Result();
 }
 
+internal partial class ExportsImpl : IExports
+{
+}
